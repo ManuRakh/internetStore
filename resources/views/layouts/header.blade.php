@@ -3,24 +3,42 @@
 	<div class="header">
 	<div class="head-t">
 		<div class="logo">
-			<a href="index.html"><img src="images/logo.png" class="img-responsive" alt=""/> </a>
+			<a href="index.html"><img src="{{asset('public/images/logo.png')}}" class="img-responsive" alt=""/> </a>
 		</div>
 		@if(count($errors)>0)
 @foreach($errors->all() as $error)
 
-<h2  class = "error">{{$error}}</h2>
+<h6 class = "error">{{$error}}</h2>
 @endforeach
 @endif               
 <style>
 	.error
 	{display:block;
-	width:500px;
+	margin-left:70%;
 background-color:red;
 	}
 	</style>
-		<!-- start header_right -->
-		<div class="header_right">
+
+<!-- start header_right -->
+		<div class="header_right">					
+
 			<div class="rgt-bottom">
+			@if(session()->has('login'))
+
+						    
+					
+				<div class="reg">							
+					<?php echo session('UserName')?>
+<br/>
+					<a href="{{ route('logout')}}">Logout</a>
+					<style>
+						.reg
+						{
+							margin-right:12%;
+						}
+						</style>
+				</div>
+					@else
 				<div class="log">
 					<div class="login" >
 						<div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
@@ -49,16 +67,21 @@ background-color:red;
 				<div class="reg">
 					<a href="{{ route('register')}}">REGISTER</a>
 				</div>
-			<div class="cart box_1">
+				@endif
+
+
+			<!--<div class="cart box_1">
 				<a href="checkout.html">
 					<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img src="images/bag.png" alt=""></h3>
 				</a>	
 				<p><a href="javascript:;" class="simpleCart_empty">(empty card)</a></p>
 				<div class="clearfix"> </div>
 			</div>
+			!-->
 			<div class="create_btn">
 				<a href="checkout.html">CHECKOUT</a>
 			</div>
+			
 			<div class="clearfix"> </div>
 		</div>
 		<div class="search">

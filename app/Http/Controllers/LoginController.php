@@ -16,14 +16,15 @@ class LoginController extends Controller
               'password'=>'required|min:6',
           ]
           );
-          $user = User::select('email', 'password')->where('email',$request->input('email'))->first();
+          $user = User::select('email','name', 'password')->where('email',$request->input('email'))->first();
            $user1=(object)$user;
            $hisPass = md5($request->input('password'));
              $password = ($user1->password);
            if($hisPass==$password)
            {
-               echo "HUY";
                session(['login' => $user1->email]);
+               session(['UserName' => $user1->name]);
+
                session(['validited' => 'Yes']);
                session(['privilegion' => 'user']);
                return redirect()->back();
@@ -37,7 +38,14 @@ class LoginController extends Controller
     }
     public function logout()
     {
-        session(['logout' => 'Успешно вышли']);
+        session()->forget('login');
+        session()->forget('UserName');
+        session()->forget('validited');
+        session()->forget('privilegion');
+        return redirect()->back();
+
+
+
         
 
     }
