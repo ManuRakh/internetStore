@@ -7,9 +7,17 @@
 		</div>
 		@if(count($errors)>0)
 @foreach($errors->all() as $error)
-{{$error}}
+
+<h2  class = "error">{{$error}}</h2>
 @endforeach
 @endif               
+<style>
+	.error
+	{display:block;
+	width:500px;
+background-color:red;
+	}
+	</style>
 		<!-- start header_right -->
 		<div class="header_right">
 			<div class="rgt-bottom">
