@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 */
 Route::get('/','IndexController@index');
+Route::get('/register','RegisterController@index')->name('register');
+Route::post('register','RegisterController@store')->name('userAdd');

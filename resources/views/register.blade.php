@@ -1,5 +1,7 @@
 @extends('layouts.footer')
-@extends('layouts.body')
+@extends('layouts.registerLayout')
+
 @extends('layouts.header')
 
 @extends('layouts.head')
+
