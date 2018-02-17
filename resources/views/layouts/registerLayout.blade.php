@@ -1,3 +1,21 @@
+<?php
+function success()
+{
+if(session()->has('data'))
+{
+	$value = session('data');
+echo "<h2 id = 'succession'>".($value)."</h2>";
+session()->forget('data');
+
+}
+}
+?>
+<style>
+#succession
+{
+	color:green;
+}
+</style>
 <div class="container">
 <div class="main">
 	<!-- start registration -->
@@ -52,7 +70,7 @@
 		 <div class="registration_form">
 		 <!-- Form -->
 			<form id="registration_form" action="{{route('userAdd')}}" method="post">
-
+            <?php success(); ?>
 				<div>
 					<label>
 						<input placeholder="first name:" name = "name" type="text" tabindex="1" required autofocus>
@@ -101,6 +119,8 @@
 			<!-- /Form -->
 		</div>
     </div>
+
+
     @if(count($errors)>0)
 @foreach($errors->all() as $error)
 {{$error}}

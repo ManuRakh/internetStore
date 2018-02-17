@@ -5,14 +5,21 @@
 		<div class="logo">
 			<a href="index.html"><img src="images/logo.png" class="img-responsive" alt=""/> </a>
 		</div>
+		@if(count($errors)>0)
+@foreach($errors->all() as $error)
+{{$error}}
+@endforeach
+@endif               
 		<!-- start header_right -->
 		<div class="header_right">
 			<div class="rgt-bottom">
 				<div class="log">
 					<div class="login" >
 						<div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
-						    <div id="loginBox">                
-						        <form id="loginForm">
+						    <div id="loginBox"> 
+				
+						        <form id="loginForm" method = "POST" action = "{{route('login')}}">
+								{{csrf_field()}}
 						                <fieldset id="body">
 						                	<fieldset>
 						                          <label for="email">Email Address</label>
@@ -58,7 +65,7 @@
 	</div>
 		<!-- start header menu -->
 		<ul class="megamenu skyblue">
-			<li class="active grid"><a class="color1" href="index.html">Home</a></li>
+			<li class="active grid"><a class="color1" href="{{route('home')}}">Home</a></li>
 			<li class="grid"><a class="color2" href="#">new arrivals</a>
 				<div class="megapanel">
 					<div class="row">
