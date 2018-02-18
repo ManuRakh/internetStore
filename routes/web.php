@@ -20,5 +20,6 @@ Route::get('/register','RegisterController@index')->name('register');
 Route::post('register','RegisterController@store')->name('userAdd');
 Route::post('/logincheck','LoginController@login')->name('login');
 Route::get('/logout','LoginController@logout')->name('logout');
+Route::post('/sendMail','MailSetting@sendMail')->name('sendMail');
 
 

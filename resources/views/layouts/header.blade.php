@@ -3,7 +3,7 @@
 	<div class="header">
 	<div class="head-t">
 		<div class="logo">
-			<a href="index.html"><img src="{{asset('public/images/logo.png')}}" class="img-responsive" alt=""/> </a>
+			<a href="{{route('home')}}"><img src="{{asset('public/images/logo.png')}}" class="img-responsive" alt=""/> </a>
 		</div>
 		@if(count($errors)>0)
 @foreach($errors->all() as $error)
@@ -30,7 +30,7 @@ background-color:red;
 				<div class="reg">							
 					<?php echo session('UserName')?>
 <br/>
-					<a href="{{ route('logout')}}">Logout</a>
+					<a href="{{ route('logout')}}">Выйти</a>
 					<style>
 						.reg
 						{
@@ -41,31 +41,31 @@ background-color:red;
 					@else
 				<div class="log">
 					<div class="login" >
-						<div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
+						<div id="loginContainer"><a href="#" id="loginButton"><span>Войти</span></a>
 						    <div id="loginBox"> 
 				
 						        <form id="loginForm" method = "POST" action = "{{route('login')}}">
 								{{csrf_field()}}
 						                <fieldset id="body">
 						                	<fieldset>
-						                          <label for="email">Email Address</label>
+						                          <label for="email">Имейл аддрес</label>
 						                          <input type="text" name="email" id="email">
 						                    </fieldset>
 						                    <fieldset>
-						                            <label for="password">Password</label>
+						                            <label for="password">Пароль</label>
 						                            <input type="password" name="password" id="password">
 						                     </fieldset>
 						                    <input type="submit" id="login" value="Sign in">
-						                	<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
+						                	<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Запомнить меня</i></label>
 						            	</fieldset>
-						            <span><a href="#">Forgot your password?</a></span>
+						            <span><a href="#">Забыли пароль?</a></span>
 								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="reg">
-					<a href="{{ route('register')}}">REGISTER</a>
+					<a href="{{ route('register')}}">Зарегистрироваться</a>
 				</div>
 				@endif
 
@@ -79,7 +79,7 @@ background-color:red;
 			</div>
 			!-->
 			<div class="create_btn">
-				<a href="checkout.html">CHECKOUT</a>
+				<a href="checkout.html">Заказать</a>
 			</div>
 			
 			<div class="clearfix"> </div>
@@ -96,15 +96,15 @@ background-color:red;
 	</div>
 		<!-- start header menu -->
 		<ul class="megamenu skyblue">
-			<li class="active grid"><a class="color1" href="{{route('home')}}">Home</a></li>
-			<li class="grid"><a class="color2" href="#">new arrivals</a>
+			<li class="active grid"><a class="color1" href="{{route('home')}}">Домой</a></li>
+			<li class="grid"><a class="color2" href="#">Новые товары</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
 								<h4>Clothing</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 								
 								</ul>	
 							</div>							
@@ -113,7 +113,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>kids</h4>
 								<ul>
-									<li><a href="women.html">Pools&Tees</a></li>
+									<li><a href="women.html">Майки</a></li>
 							
 								</ul>	
 							</div>							
@@ -122,7 +122,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Bags</h4>
 								<ul>
-									<li><a href="women.html">Handbag</a></li>
+									<li><a href="women.html">Сумки. Багажи</a></li>
 								
 								</ul>	
 							</div>												
@@ -131,12 +131,11 @@ background-color:red;
 							<div class="h_nav">
 								<h4>account</h4>
 								<ul>
-									<li><a href="#">login</a></li>
-									<li><a href="register.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
+									<li><a href="#">Войти</a></li>
+									<li><a href="register.html">Создать аккаунт</a></li>
+									<li><a href="women.html">Создать список пожеланий</a></li>
+									<li><a href="women.html">Корзина</a></li>
+									<li><a href="women.html">Бренды</a></li>
 								</ul>	
 							</div>						
 						</div>
@@ -144,7 +143,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Accessories</h4>
 								<ul>
-									<li><a href="women.html">Belts</a></li>
+									<li><a href="women.html">Ремни</a></li>
 								
 								</ul>	
 							</div>
@@ -153,7 +152,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Footwear</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 							
 								</ul>	
 							</div>
@@ -168,14 +167,14 @@ background-color:red;
 					</div>
     				</div>
 				</li>
-			<li><a class="color4" href="#">TUXEDO</a>
+			<li><a class="color4" href="#">СМОКИНГ</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
 								<h4>Clothing</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 									
 								</ul>	
 							</div>							
@@ -184,7 +183,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>kids</h4>
 								<ul>
-									<li><a href="women.html">Pools&Tees</a></li>
+									<li><a href="women.html">Майки</a></li>
 							
 								</ul>	
 							</div>							
@@ -193,7 +192,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Bags</h4>
 								<ul>
-									<li><a href="women.html">Handbag</a></li>
+									<li><a href="women.html">Сумки и багажи</a></li>
 							
 								</ul>	
 							</div>												
@@ -202,7 +201,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>account</h4>
 								<ul>
-									<li><a href="#">login</a></li>
+									<li><a href="#">Войти</a></li>
 									
 								</ul>	
 							</div>						
@@ -211,7 +210,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Accessories</h4>
 								<ul>
-									<li><a href="women.html">Belts</a></li>
+									<li><a href="women.html">Ремни</a></li>
 								
 								</ul>	
 							</div>
@@ -220,7 +219,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Footwear</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 								
 								</ul>	
 							</div>
@@ -235,14 +234,14 @@ background-color:red;
 					</div>
     				</div>
 				</li>				
-				<li><a class="color5" href="#">SWEATER</a>
+				<li><a class="color5" href="#">Свитеры</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
 								<h4>Clothing</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 								
 								</ul>	
 							</div>							
@@ -251,7 +250,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>kids</h4>
 								<ul>
-									<li><a href="women.html">Pools&Tees</a></li>
+									<li><a href="women.html">Майки</a></li>
 									
 								</ul>	
 							</div>							
@@ -260,7 +259,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Bags</h4>
 								<ul>
-									<li><a href="women.html">Handbag</a></li>
+									<li><a href="women.html">Сумки и багажи</a></li>
 								
 								</ul>	
 							</div>												
@@ -269,7 +268,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>account</h4>
 								<ul>
-									<li><a href="#">login</a></li>
+									<li><a href="#">Войти</a></li>
 								
 								</ul>	
 							</div>						
@@ -278,7 +277,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Accessories</h4>
 								<ul>
-									<li><a href="women.html">Belts</a></li>
+									<li><a href="women.html">Ремни</a></li>
 								
 								</ul>	
 							</div>
@@ -287,7 +286,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Footwear</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 								
 								</ul>	
 							</div>
@@ -299,14 +298,14 @@ background-color:red;
 					</div>
     				</div>
 				</li>
-				<li><a class="color6" href="#">SHOES</a>
+				<li><a class="color6" href="#">Обувь</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
 								<h4>Clothing</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 									
 								</ul>	
 							</div>							
@@ -315,7 +314,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>kids</h4>
 								<ul>
-									<li><a href="women.html">Pools&Tees</a></li>
+									<li><a href="women.html">Майки</a></li>
 					
 								</ul>	
 							</div>							
@@ -324,16 +323,16 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Bags</h4>
 								<ul>
-									<li><a href="women.html">Handbag</a></li>
+									<li><a href="women.html">Сумки и багажи</a></li>
 								
 								</ul>	
 							</div>												
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>account</h4>
+								<h4>аккаунт</h4>
 								<ul>
-									<li><a href="#">login</a></li>
+									<li><a href="#">Войти</a></li>
 									
 								</ul>	
 							</div>						
@@ -342,7 +341,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Accessories</h4>
 								<ul>
-									<li><a href="women.html">Belts</a></li>
+									<li><a href="women.html">ремни</a></li>
 									
 								</ul>	
 							</div>
@@ -351,7 +350,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Footwear</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 								
 								</ul>	
 							</div>
@@ -374,7 +373,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Clothing</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 									
 								</ul>	
 							</div>							
@@ -392,16 +391,16 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Bags</h4>
 								<ul>
-									<li><a href="women.html">Handbag</a></li>
+									<li><a href="women.html">Сумки и багажи</a></li>
 									
 								</ul>	
 							</div>												
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>account</h4>
+								<h4>аккаунт</h4>
 								<ul>
-									<li><a href="#">login</a></li>
+									<li><a href="#">Войти</a></li>
 								
 								</ul>	
 							</div>						
@@ -410,7 +409,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Accessories</h4>
 								<ul>
-									<li><a href="women.html">Belts</a></li>
+									<li><a href="women.html">ремни</a></li>
 								
 								</ul>	
 							</div>
@@ -419,7 +418,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Footwear</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 						
 								</ul>	
 							</div>
@@ -442,7 +441,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Clothing</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 								
 								</ul>	
 							</div>							
@@ -451,7 +450,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>kids</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
+									<li><a href="women.html">Тренды</a></li>
 									
 								</ul>	
 							</div>							
@@ -460,7 +459,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Bags</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
+									<li><a href="women.html">Тренды</a></li>
 									
 								</ul>	
 							</div>												
@@ -469,7 +468,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>account</h4>
 								<ul>
-									<li><a href="#">login</a></li>
+									<li><a href="#">Войти</a></li>
 								
 								</ul>	
 							</div>						
@@ -478,7 +477,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Accessories</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
+									<li><a href="women.html">Тренды</a></li>
 									
 								</ul>	
 							</div>
@@ -487,7 +486,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Footwear</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 									
 								</ul>	
 							</div>
@@ -509,7 +508,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Clothing</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
+									<li><a href="women.html">Новые товары</a></li>
 									
 								</ul>	
 							</div>							
@@ -518,7 +517,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>kids</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
+									<li><a href="women.html">Тренды</a></li>
 							
 								</ul>	
 							</div>							
@@ -527,7 +526,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Bags</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
+									<li><a href="women.html">Тренды</a></li>
 								
 								</ul>	
 							</div>												
@@ -536,7 +535,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>account</h4>
 								<ul>
-									<li><a href="#">login</a></li>
+									<li><a href="#">Войти</a></li>
 							
 								</ul>	
 							</div>						
@@ -545,7 +544,7 @@ background-color:red;
 							<div class="h_nav">
 								<h4>Accessories</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
+									<li><a href="women.html">Тренды</a></li>
 									
 								</ul>	
 							</div>
