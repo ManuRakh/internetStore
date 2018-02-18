@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\Session;
 
+use Mailgun\Mailgun;
+require '..\vendor\autoload.php';
 class RegisterController extends Controller
 {
     public function index()
@@ -34,11 +36,23 @@ class RegisterController extends Controller
           $data =(array) $input;
         $user->fill($data);
     $user->save();
-         
-        session(['data' => 'Successfull registered. Congratulations!']);
+   
+      session([
+          'data' => 'Successfull registered. Please activate your email , please check your mail,thanks!',
+          'activationInformation'=> $input->password,
+          'activationId'=>md5( $input->email),
+          ]);
 
-return redirect('/register');
-
+ $html = file_get_contents('..\resources\views\email\contact-mail.blade.php');
+    $mgClient = new Mailgun('key-5362a59587a47047c93e3ed27ae3d9b1');
+    $domain = "sandbox87ef4f3b6db04199aaa48a6f1b2e06c7.mailgun.org";
+    $result = $mgClient->sendMessage("$domain", array(
+        'from'    => ' <postmaster@store.mg.org>',
+        'to'      => 'Manuchekhr <manucher5160@gmail.com>',
+     'subject' => "Активация аккаунта   ".date('Y:m:d h:i:s A'),
+     'html' => $html."<a href = 'store/activation/".$input->password.md5( $input->email)."/".$input->email."'>".$input->password.md5( $input->email)."</a>", 
+     )); 
+return redirect()->back();
     
     }
 }

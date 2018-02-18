@@ -10,14 +10,44 @@
 
 <h6 class = "error">{{$error}}</h2>
 @endforeach
-@endif               
+@endif
+<?php
+use App\Good;
+
+if(session()->has('successActivation'))
+{
+	$value = session('successActivation');
+echo "<h4 class = 'error' id = 'succession'>".($value)."</h4>";
+session()->forget('successActivation');
+}
+if(session()->has('validited'))
+{
+	if(session('validited')=='Not'){
+echo "<h4 class = 'error' id = 'succession'>Извините, аккаунт не активирован.<br/> Пожалуйста проверьте почту для активации аккаунта"."</h4>";
+session()->forget('validited');}
+}
+if(session()->has('validited'))
+{
+		if(session('validited')=='Wrong'){
+echo "<h4 class = 'error' id = 'succession'>Извините, логин или пароль не верны.<br/>"."</h4>";
+session()->forget('validited');}
+}
+?>               
 <style>
 	.error
 	{display:block;
 	margin-left:70%;
-background-color:red;
 	}
 	</style>
+
+
+<style>
+#succession
+{
+	color:green;
+}
+</style>
+
 
 <!-- start header_right -->
 		<div class="header_right">					
@@ -67,6 +97,14 @@ background-color:red;
 				<div class="reg">
 					<a href="{{ route('register')}}">Зарегистрироваться</a>
 				</div>
+				<style>
+				.reg , .log
+				{
+					margin-right:13%;
+
+				}
+				
+				</style>
 				@endif
 
 
@@ -78,9 +116,7 @@ background-color:red;
 				<div class="clearfix"> </div>
 			</div>
 			!-->
-			<div class="create_btn">
-				<a href="checkout.html">Заказать</a>
-			</div>
+			
 			
 			<div class="clearfix"> </div>
 		</div>
@@ -102,7 +138,7 @@ background-color:red;
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Clothing</h4>
+								<h4>Одежда</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 								
@@ -111,7 +147,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>kids</h4>
+								<h4>Детям</h4>
 								<ul>
 									<li><a href="women.html">Майки</a></li>
 							
@@ -120,7 +156,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Bags</h4>
+								<h4>Сумки</h4>
 								<ul>
 									<li><a href="women.html">Сумки. Багажи</a></li>
 								
@@ -129,7 +165,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>account</h4>
+								<h4>Аккаунт</h4>
 								<ul>
 									<li><a href="#">Войти</a></li>
 									<li><a href="register.html">Создать аккаунт</a></li>
@@ -141,16 +177,28 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Accessories</h4>
+								<h4>Аксессуары</h4>
 								<ul>
-									<li><a href="women.html">Ремни</a></li>
-								
+								<li><a href="{{route('viewCategory',['category'=>'category'])}}">Смотреть все</a></li>
+
+								<?php
+								function giveGoods()
+								{
+								$goods = Good::select('name','category')->orderBy('id','desk')->limit(5)->get();								
+								foreach($goods as $good)
+									{
+									echo "<li><a href="."{{route('viewCategory')}}>".$good->name."</a></li>";
+									}
+								}
+								giveGoods();
+								?>
+
 								</ul>	
 							</div>
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Footwear</h4>
+								<h4>Обувь</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 							
@@ -167,79 +215,13 @@ background-color:red;
 					</div>
     				</div>
 				</li>
-			<li><a class="color4" href="#">СМОКИНГ</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Clothing</h4>
-								<ul>
-									<li><a href="women.html">Новые товары</a></li>
-									
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>kids</h4>
-								<ul>
-									<li><a href="women.html">Майки</a></li>
-							
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Bags</h4>
-								<ul>
-									<li><a href="women.html">Сумки и багажи</a></li>
-							
-								</ul>	
-							</div>												
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>account</h4>
-								<ul>
-									<li><a href="#">Войти</a></li>
-									
-								</ul>	
-							</div>						
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Accessories</h4>
-								<ul>
-									<li><a href="women.html">Ремни</a></li>
-								
-								</ul>	
-							</div>
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Footwear</h4>
-								<ul>
-									<li><a href="women.html">Новые товары</a></li>
-								
-								</ul>	
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col2"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-					</div>
-    				</div>
-				</li>				
+				
 				<li><a class="color5" href="#">Свитеры</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Clothing</h4>
+								<h4>Одежда</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 								
@@ -248,7 +230,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>kids</h4>
+								<h4>Детям</h4>
 								<ul>
 									<li><a href="women.html">Майки</a></li>
 									
@@ -257,7 +239,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Bags</h4>
+								<h4>Сумки</h4>
 								<ul>
 									<li><a href="women.html">Сумки и багажи</a></li>
 								
@@ -266,7 +248,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>account</h4>
+								<h4>Аккаунт</h4>
 								<ul>
 									<li><a href="#">Войти</a></li>
 								
@@ -275,7 +257,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Accessories</h4>
+								<h4>Аксессуары</h4>
 								<ul>
 									<li><a href="women.html">Ремни</a></li>
 								
@@ -284,7 +266,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Footwear</h4>
+								<h4>Обувь</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 								
@@ -303,7 +285,7 @@ background-color:red;
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Clothing</h4>
+								<h4>Одежда</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 									
@@ -312,7 +294,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>kids</h4>
+								<h4>Детям</h4>
 								<ul>
 									<li><a href="women.html">Майки</a></li>
 					
@@ -321,7 +303,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Bags</h4>
+								<h4>Сумки</h4>
 								<ul>
 									<li><a href="women.html">Сумки и багажи</a></li>
 								
@@ -339,7 +321,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Accessories</h4>
+								<h4>Аксессуары</h4>
 								<ul>
 									<li><a href="women.html">ремни</a></li>
 									
@@ -348,7 +330,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Footwear</h4>
+								<h4>Обувь</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 								
@@ -366,12 +348,12 @@ background-color:red;
     				</div>
 				</li>				
 			
-				<li><a class="color7" href="#">GLASSES</a>
+				<li><a class="color7" href="#">Очки</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Clothing</h4>
+								<h4>Одежда</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 									
@@ -380,7 +362,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>kids</h4>
+								<h4>Детям</h4>
 								<ul>
 									<li><a href="women.html">Pools&Tees</a></li>
 								
@@ -389,7 +371,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Bags</h4>
+								<h4>Сумки</h4>
 								<ul>
 									<li><a href="women.html">Сумки и багажи</a></li>
 									
@@ -407,7 +389,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Accessories</h4>
+								<h4>Аксессуары</h4>
 								<ul>
 									<li><a href="women.html">ремни</a></li>
 								
@@ -416,7 +398,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Footwear</h4>
+								<h4>Обувь</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 						
@@ -434,12 +416,12 @@ background-color:red;
     				</div>
 				</li>				
 			
-				<li><a class="color8" href="#">T-SHIRT</a>
+				<li><a class="color8" href="#">Футболки</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Clothing</h4>
+								<h4>Одежда</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 								
@@ -448,7 +430,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>kids</h4>
+								<h4>Детям</h4>
 								<ul>
 									<li><a href="women.html">Тренды</a></li>
 									
@@ -457,7 +439,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Bags</h4>
+								<h4>Сумки</h4>
 								<ul>
 									<li><a href="women.html">Тренды</a></li>
 									
@@ -466,7 +448,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>account</h4>
+								<h4>Аккаунт</h4>
 								<ul>
 									<li><a href="#">Войти</a></li>
 								
@@ -475,7 +457,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Accessories</h4>
+								<h4>Аксессуары</h4>
 								<ul>
 									<li><a href="women.html">Тренды</a></li>
 									
@@ -484,7 +466,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Footwear</h4>
+								<h4>Обувь</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 									
@@ -501,12 +483,12 @@ background-color:red;
 					</div>
     				</div>
 				</li>
-				<li><a class="color9" href="#">WATCHES</a>
+				<li><a class="color9" href="#">Часы</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Clothing</h4>
+								<h4>Одежда</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 									
@@ -515,7 +497,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>kids</h4>
+								<h4>Детям</h4>
 								<ul>
 									<li><a href="women.html">Тренды</a></li>
 							
@@ -524,7 +506,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Bags</h4>
+								<h4>Сумки</h4>
 								<ul>
 									<li><a href="women.html">Тренды</a></li>
 								
@@ -533,7 +515,7 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>account</h4>
+								<h4>Аккаунт</h4>
 								<ul>
 									<li><a href="#">Войти</a></li>
 							
@@ -542,7 +524,94 @@ background-color:red;
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Accessories</h4>
+								<h4>Аксессуары</h4>
+								<ul>
+									<li><a href="women.html">Тренды</a></li>
+									
+								</ul>	
+							</div>
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col2"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+						<div class="col1"></div>
+					</div>
+    				</div>
+				</li>
+				<li><a class="color9" href="#">Корзина</a>
+				<div class="megapanel">
+					<div class="row">
+						<div class="col1">
+							<div class="h_nav">
+								<h4>Товары в корзине</h4>
+								<ul>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="women.html">Новые товары</a></li>
+
+									
+								</ul>	
+							</div>							
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>Цены</h4>
+								<ul>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+									<li><a href="women.html">2000</a></li>
+
+								</ul>	
+
+							</div>							
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>Сумки</h4>
+								<ul>
+									<li><a href="women.html">Тренды</a></li>
+								
+								</ul>	
+							</div>												
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>Аккаунт</h4>
+								<ul>
+									<li><a href="#">Войти</a></li>
+							
+								</ul>	
+							</div>						
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+								<h4>Аксессуары</h4>
 								<ul>
 									<li><a href="women.html">Тренды</a></li>
 									

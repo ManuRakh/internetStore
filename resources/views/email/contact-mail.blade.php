@@ -2,6 +2,7 @@
     <head>
 </head>
 <body>
-    Hello World
+Hello World
+<?php echo session('activationInformation');?>
 </body>
     </html>

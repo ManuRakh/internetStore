@@ -4,7 +4,7 @@ function success()
 if(session()->has('data'))
 {
 	$value = session('data');
-echo "<h2 id = 'succession'>".($value)."</h2>";
+echo "<h4 id = 'succession'>".($value)."</h4>";
 session()->forget('data');
 
 }
@@ -16,6 +16,7 @@ session()->forget('data');
 	color:green;
 }
 </style>
+
 <div class="container">
 <div class="main">
 	<!-- start registration -->

@@ -21,5 +21,7 @@ Route::post('register','RegisterController@store')->name('userAdd');
 Route::post('/logincheck','LoginController@login')->name('login');
 Route::get('/logout','LoginController@logout')->name('logout');
 Route::post('/sendMail','MailSetting@sendMail')->name('sendMail');
+Route::get('/activation/{hash}/{mail}',"LoginController@activation");
 
+Route::get('/viewGoods/{category}',"LoginController@activation")->name('viewCategory');
 
