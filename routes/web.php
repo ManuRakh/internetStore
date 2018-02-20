@@ -25,6 +25,5 @@ Route::get('/activation/{hash}/{mail}',"LoginController@activation");
 
 Route::get('/viewGoods/{category}',"StoresController@showCategory")->name('viewCategory');
 Route::get('/viewGoods/{category}/{good}',"StoresController@showGood")->name('viewGoodInCategory');
-
-
 Route::get('/viewGoods/{category}/undercategories/{good}/{name}',"StoresController@showUnderCategory")->name('viewUnderCategory');
+Route::get('/details/{goodid}',"DetailsController@show")->name('viewDetails');

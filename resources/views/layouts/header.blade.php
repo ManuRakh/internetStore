@@ -215,7 +215,7 @@ session()->forget('validited');}
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Одежда</h4>
+								<h4>Новые свитера</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 								
@@ -224,7 +224,7 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Детям</h4>
+								<h4>Детские свитера</h4>
 								<ul>
 								<?php  giveGoods(4); ?>
 									
@@ -233,7 +233,7 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Сумки</h4>
+								<h4>Зимние свитера</h4>
 								<ul>
 
 <?php  giveGoods(3); ?>
@@ -242,7 +242,7 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Аккаунт</h4>
+								<h4>Весенние свитера</h4>
 								<ul>
 									<li><a href="#">Войти</a></li>
 								
@@ -251,7 +251,7 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Аксессуары</h4>
+								<h4>Осенние свитера</h4>
 								<ul>
 									<li><a href="women.html">Ремни</a></li>
 								
@@ -260,7 +260,7 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Обувь</h4>
+								<h4>Корзина</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 								
@@ -279,7 +279,7 @@ session()->forget('validited');}
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Одежда</h4>
+								<h4>Летняя обувь</h4>
 								<ul>
 									<li><a href="women.html">Новые товары</a></li>
 									
@@ -288,7 +288,7 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Детям</h4>
+								<h4>Зимняя обувь</h4>
 								<ul>
 									<li><a href="women.html">Майки</a></li>
 					
@@ -297,7 +297,7 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Сумки</h4>
+								<h4>Спортивная обувь</h4>
 								<ul>
 									<li><a href="women.html">Сумки и багажи</a></li>
 								
@@ -306,7 +306,7 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>аккаунт</h4>
+								<h4>Оффициальный стиль</h4>
 								<ul>
 									<li><a href="#">Войти</a></li>
 									
