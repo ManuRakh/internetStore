@@ -23,5 +23,7 @@ Route::get('/logout','LoginController@logout')->name('logout');
 Route::post('/sendMail','MailSetting@sendMail')->name('sendMail');
 Route::get('/activation/{hash}/{mail}',"LoginController@activation");
 
-Route::get('/viewGoods/{category}',"StoresController@show")->name('viewCategory');
+Route::get('/viewGoods/{category}',"StoresController@showCategory")->name('viewCategory');
+Route::get('/viewGoods/{category}/{good}',"StoresController@showGood")->name('viewGoodInCategory');
+
 

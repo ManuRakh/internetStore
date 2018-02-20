@@ -1,3 +1,4 @@
+
 <div class="header_bg">
 <div class="container">
 	<div class="header">
@@ -12,7 +13,7 @@
 @endforeach
 @endif
 <?php
-use App\Good;
+use App\Undercategory;
 
 if(session()->has('successActivation'))
 {
@@ -179,19 +180,30 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Аксессуары</h4>
 								<ul>
-								<li><a href="{{route('viewCategory',['category'=>'category'])}}">Смотреть все</a></li>
 
 								<?php
-								function giveGoods()
-								{
-								$goods = Good::select('name','category')->orderBy('id','desk')->limit(5)->get();								
-								foreach($goods as $good)
-									{
-									echo "<li><a href="."{{route('viewCategory')}}>".$good->name."</a></li>";
-									}
-								}
-								giveGoods();
+								     function giveGoods($category_id)//Giving undercategory of goods according of his ID
+								 {
+								 $goods = Undercategory::select('name','category_id')->where('category_id',$category_id)->orderBy('id','desk')->limit(5)->get();								
+								 foreach($goods as $good)
+									 {
+										 ?>
+									 <li><a href="{{route('viewCategory',[
+										
+										'category'=>$good->category_id,
+										
+										])}}">{{$good->name}}</a></li>
+									 <?php
+									 }
+									 ?>
+								<li><a href="{{route('viewCategory',[
+									'category'=>$category_id
+									])}}">Смотреть все</a></li>
+<?php
+								 } giveGoods(2);
+								//Good::giveGoods();
 								?>
+
 
 								</ul>	
 							</div>
