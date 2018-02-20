@@ -23,6 +23,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <script src="{{asset('/public/js/menu_jquery.js')}}"></script>
 <script src="{{asset('/public/js/simpleCart.min.js')}}"> </script>
+<?php 
+use App\Undercategory;
+
+								     function giveGoods($category_id)//Giving undercategory of goods according of his ID
+								 {
+								 $goods = Undercategory::select('id','name','category_id')->where('category_id',$category_id)->orderBy('id','desk')->limit(5)->get();								
+								 foreach($goods as $good)
+									 {
+										 ?>
+									 <li><a href="{{route('viewUnderCategory',[
+										
+										'category'=>$good->category_id,
+										'good'=>$good->id,
+										'name'=>$good->name,
+										
+										])}}">{{$good->name}}</a></li>
+									 <?php
+									 }
+									 ?>
+								<li><a href="{{route('viewCategory',[
+									'category'=>$category_id
+									])}}">Смотреть все</a></li>
+<?php
+								 }  ?>
 </head>
 <body>
 <div class="top_bg">

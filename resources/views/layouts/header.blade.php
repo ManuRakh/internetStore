@@ -13,7 +13,6 @@
 @endforeach
 @endif
 <?php
-use App\Undercategory;
 
 if(session()->has('successActivation'))
 {
@@ -141,7 +140,7 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Одежда</h4>
 								<ul>
-									<li><a href="women.html">Новые товары</a></li>
+								<?php  giveGoods(5); ?>
 								
 								</ul>	
 							</div>							
@@ -150,16 +149,16 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Детям</h4>
 								<ul>
-									<li><a href="women.html">Майки</a></li>
+								<?php  giveGoods(4); ?>
 							
 								</ul>	
 							</div>							
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Сумки</h4>
+								<h4>Сумки и Багажи</h4>
 								<ul>
-									<li><a href="women.html">Сумки. Багажи</a></li>
+								<?php  giveGoods(3); ?>
 								
 								</ul>	
 							</div>												
@@ -181,26 +180,8 @@ session()->forget('validited');}
 								<h4>Аксессуары</h4>
 								<ul>
 
-								<?php
-								     function giveGoods($category_id)//Giving undercategory of goods according of his ID
-								 {
-								 $goods = Undercategory::select('name','category_id')->where('category_id',$category_id)->orderBy('id','desk')->limit(5)->get();								
-								 foreach($goods as $good)
-									 {
-										 ?>
-									 <li><a href="{{route('viewCategory',[
-										
-										'category'=>$good->category_id,
-										
-										])}}">{{$good->name}}</a></li>
-									 <?php
-									 }
-									 ?>
-								<li><a href="{{route('viewCategory',[
-									'category'=>$category_id
-									])}}">Смотреть все</a></li>
-<?php
-								 } giveGoods(2);
+								
+								 <?php giveGoods(1);
 								//Good::giveGoods();
 								?>
 
@@ -212,8 +193,9 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Обувь</h4>
 								<ul>
-									<li><a href="women.html">Новые товары</a></li>
-							
+								<?php giveGoods(2);
+								//Good::giveGoods();
+								?>							
 								</ul>	
 							</div>
 						</div>
@@ -244,7 +226,7 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Детям</h4>
 								<ul>
-									<li><a href="women.html">Майки</a></li>
+								<?php  giveGoods(4); ?>
 									
 								</ul>	
 							</div>							
@@ -253,9 +235,9 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Сумки</h4>
 								<ul>
-									<li><a href="women.html">Сумки и багажи</a></li>
-								
-								</ul>	
+
+<?php  giveGoods(3); ?>
+</ul>	
 							</div>												
 						</div>
 						<div class="col1">
