@@ -9,9 +9,16 @@ class DetailsController extends Controller
     
     public function show($goodid)
     {
-echo $goodid;
-        $detail =   Good::select('name','id','imgurl','description','price','price_course','deliveryprice','exist.isexist')->join('exist', 'goods.exist', '=', 'exist.idz')->where('id',$goodid)->first();
-return view('details');
+        $details =   Good::select('name','id','imgurl','description','price','price_course','deliveryprice','imgs.url')->join('imgs', 'goods.id', '=', 'imgs.goodid')->where('id',$goodid)->orderBy('id','desk')->get();
+        $detail =   Good::select('name','id','imgurl','description','price','price_course','deliveryprice','imgs.url')->join('imgs', 'goods.id', '=', 'imgs.goodid')->where('id',$goodid)->first();
+
+
+if($details) {if($detail)
+        return view('details')->with([
+            'details'=>$details,
+            'firstdetail'=>$detail,
+        ]);}
+        else return view('details');
 
     }
 }

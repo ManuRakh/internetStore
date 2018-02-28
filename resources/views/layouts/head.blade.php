@@ -49,7 +49,7 @@ use App\Undercategory;
 
 								     function giveGoods($category_id)//Giving undercategory of goods according of his ID
 								 {
-								 $goods = Undercategory::select('id','name','category_id')->where('category_id',$category_id)->orderBy('id','desk')->limit(5)->get();								
+								 $goods = Undercategory::select('id','names','category_id')->where('category_id',$category_id)->orderBy('id','desk')->limit(5)->get();								
 								 foreach($goods as $good)
 									 {
 										 ?>
@@ -57,9 +57,9 @@ use App\Undercategory;
 										
 										'category'=>$good->category_id,
 										'good'=>$good->id,
-										'name'=>$good->name,
+										'name'=>$good->names,
 										
-										])}}">{{$good->name}}</a></li>
+										])}}">{{$good->names}}</a></li>
 									 <?php
 									 }
 									 ?>

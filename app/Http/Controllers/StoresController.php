@@ -13,13 +13,15 @@ class StoresController extends Controller
 public function showCategory ($category)
 {  
      $data =   Good::select('name','id','imgurl','description','price','price_course','deliveryprice','exist.isexist')->join('exist', 'goods.exist', '=', 'exist.idz')->where('category',$category)->get();
-    
      $categoryes=Good::select('categories.name')->join('categories', 'goods.id', '=', 'categories.id')->where('categories.id',$category)->first()->name;
-     return view('GoodInList')->with(
+     $categoryz=Undercategory::select('id','names')->where('category_id',$category)->get();
+
+     return view('GoodInList2')->with(
          
         [
-            'data'=>$data,
+            'date'=>$data,
             'category'=>$categoryes,
+            'categoryz'=>$categoryz,
         ]);
 
 }
@@ -35,9 +37,9 @@ public function showGood($category,$good)
 
 public function showUnderCategory($category,$good,$name)
 {
-$data =   Good::select('name','id','imgurl','description','price','price_course','deliveryprice','exist.isexist')->join('exist', 'goods.exist', '=', 'exist.idz')->where('category',$category)->get();
+$data =   Good::select('name','id','imgurl','description','price','price_course','deliveryprice','exist.isexist')->join('exist', 'goods.exist', '=', 'exist.idz')->where('category',$good)->paginate(8);
     
-$categoryes=Undercategory::select('id','name')->where('id',$good)->first()->name;
+$categoryes=Undercategory::select('id','names')->where('id',$good)->first()->names;
 return view('GoodInList')->with(
     
    [

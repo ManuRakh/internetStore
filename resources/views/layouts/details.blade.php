@@ -11,22 +11,20 @@
 						<ul id="etalage">
 							<li>
 								<a href="optionallink.html">
-									<img class="etalage_thumb_image" src="../public/images/d1.jpg" class="img-responsive" />
-									<img class="etalage_source_image" src="../public/images/d1.jpg" class="img-responsive" title="" />
+									<img class="etalage_thumb_image" src="{{$firstdetail->url}}" class="img-responsive" />
+									<img class="etalage_source_image" src="{{$firstdetail->url}}" class="img-responsive" title="" />
 								</a>
 							</li>
+						
+							@foreach($details as $detail)
+							@if($detail->url!=$firstdetail->url)
 							<li>
-								<img class="etalage_thumb_image" src="../public/images/d2.jpg" class="img-responsive" />
-								<img class="etalage_source_image" src="../public/images/d2.jpg" class="img-responsive" title="" />
+								<img class="etalage_thumb_image" src="{{$detail->url}}" class="img-responsive" />
+								<img class="etalage_source_image" src="{{$detail->url}}" class="img-responsive" title="" />
 							</li>
-							<li>
-								<img class="etalage_thumb_image" src="../public/images/d3.jpg" class="img-responsive"  />
-								<img class="etalage_source_image" src="../public/images/d3.jpg"class="img-responsive"  />
-							</li>
-						    <li>
-								<img class="etalage_thumb_image" src="../public/images/d4.jpg" class="img-responsive"  />
-								<img class="etalage_source_image" src="../public/images/d4.jpg"class="img-responsive"  />
-							</li>
+							@endif
+							@endforeach
+
 						</ul>
                          <div class="clearfix"></div>		
 </div>

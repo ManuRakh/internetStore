@@ -3,37 +3,32 @@
  
 <div class="col-md-9 cart-items">
              <h1>Все товары категории {{$category}}</h1>
-             
+             		<ul class="grid_2">
+
 @foreach($data as $date)
 
-<div class="cart-item cyc">
-							 <img src="{{$date->imgurl}}" class="img-responsive" alt=""/>
-                        </div>
-                        <div class="cart-item-info">
-						<h3><a href="#">{{$date->name}}</a></h3>
-						<ul class="qty">
-							<li><p>{{$date->price}} {{$date->price_course}}</p></li>
-							<li><p>{{$date->isexist}} в наличии</p></li>
-						</ul>
-						
-							 <div class="delivery">
-							 <p>Стоимость доставки без учета главной цены : {{$date->deliveryprice}}</p>
-				        </div>	
-					   </div>
-                       <div class="cart-header">
-				 <div class="cart-sec simpleCart_shelfItem">
-						
-					  
-					   <div class="clearfix"></div>
-											
-				  </div>
-			 </div>
+		<li>
+		<form method = "POST" action = "{{route('AddToBasket',[
+		'id'=>$date->id
+		])}}" id = "addtobasket">
+			{{csrf_field()}}
+				<a href="#"><img src="{{$date->imgurl}}" class="img-responsive"  alt="{{$date->name}}" style = "width:300px;height:200px;" /></a>
+				<div class="special-info grid_1 simpleCart_shelfItem">
+					<h5>{{$date->name}} {{$date->id}}</h5>
+					<div class="item_add"><span class="item_price"><h6>Just for {{$date->price}} {{$date->price_course}}</h6></span></div>
+					<div class="item_add"><span class="item_price"><a href="#" onclick="document.getElementById('addtobasket').submit(); return false;">add to cart</a></span></div>
+				</div>
+				</form>
+		</li>
+		
+		
 @endforeach
-			
-			
-			 	
+
+			 		</ul>
+
 		 </div>
-		 
+		 {{ $data->links() }}
+
 		
 	 </div>
 	 </div>
