@@ -543,20 +543,15 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Товары в корзине</h4>
 								<ul>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
-									<li><a href="women.html">Новые товары</a></li>
+								<?php 
+									
+										for($i = 0 ; $i<500;$i++)
+										{
+											if(session()->has('id'.$i)) 
+											
+											echo '<li><a href="women.html">'.session('name'.$i).session('id'.$i).'</a></li>';
+										}
+								?>
 
 									
 								</ul>	
@@ -566,20 +561,12 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Цены</h4>
 								<ul>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
-									<li><a href="women.html">2000</a></li>
+								<?php	for($i = 0 ; $i<500;$i++)
+										{
+											if(session()->has('id'.$i)) 
+											
+											echo '<li><a href="women.html">'.session('price'.$i).'</a></li>';
+										}?>
 
 								</ul>	
 
@@ -587,31 +574,18 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Сумки</h4>
+								<h4>Переход к корзине</h4>
 								<ul>
-									<li><a href="women.html">Тренды</a></li>
-								
+									<li><a href="women.html">Перейти в корзину</a></li>
+									<li><a href="women.html">Приступить к заказу</a></li>
+									 <li>
+									<a href ="{{route('forget')}}" onClick="">Очистить коризу</a>
+									</li>
+
 								</ul>	
 							</div>												
 						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Аккаунт</h4>
-								<ul>
-									<li><a href="#">Войти</a></li>
-							
-								</ul>	
-							</div>						
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Аксессуары</h4>
-								<ul>
-									<li><a href="women.html">Тренды</a></li>
-									
-								</ul>	
-							</div>
-						</div>
+						
 						
 					</div>
 					<div class="row">

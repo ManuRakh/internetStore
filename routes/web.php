@@ -27,4 +27,5 @@ Route::get('/viewGoods/{category}',"StoresController@showCategory")->name('viewC
 Route::get('/viewGoods/{category}/{good}',"StoresController@showGood")->name('viewGoodInCategory');
 Route::get('/viewGoods/{category}/undercategories/{good}/{name}',"StoresController@showUnderCategory")->name('viewUnderCategory');
 Route::get('/details/{goodid}',"DetailsController@show")->name('viewDetails');
-Route::post('/addToBasket/{id}','BasketController@addIt')->name('AddToBasket');
+Route::get('/addToBasket','BasketController@addIt')->name('AddToBasket');
+Route::get('/forget','BasketController@forget')->name('forget');

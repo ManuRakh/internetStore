@@ -7,20 +7,20 @@
 
 @foreach($data as $date)
 
+
 		<li>
-		<form method = "POST" action = "{{route('AddToBasket',[
-		'id'=>$date->id
-		])}}" id = "addtobasket">
-			{{csrf_field()}}
+		
 				<a href="#"><img src="{{$date->imgurl}}" class="img-responsive"  alt="{{$date->name}}" style = "width:300px;height:200px;" /></a>
 				<div class="special-info grid_1 simpleCart_shelfItem">
-					<h5>{{$date->name}} {{$date->id}}</h5>
+					<h5 id = "nameOfGood">{{$date->name}}</h5>
 					<div class="item_add"><span class="item_price"><h6>Just for {{$date->price}} {{$date->price_course}}</h6></span></div>
-					<div class="item_add"><span class="item_price"><a href="#" onclick="document.getElementById('addtobasket').submit(); return false;">add to cart</a></span></div>
+					<div class="item_add"><span class="item_price"><a href="{{route('AddToBasket')}}?id={{$date->id}}&name={{$date->name}}&price={{$date->price}}{{$date->price_course}}">add to cart</a></span></div>
 				</div>
-				</form>
+	
+			
 		</li>
-		
+	
+
 		
 @endforeach
 
@@ -32,3 +32,15 @@
 		
 	 </div>
 	 </div>
+<?php 
+// if(isset($_GET['id'])) {
+// 	$id =  ($_GET['id']);
+// 	$name =  ($_GET['name']);
+// 	$price = ($_GET['price']);
+// 	session(['id'.$id => $id]);
+// 	session(['name'.$id => $name,
+// 	'price'.$id =>$price,
+// 	]);
+
+// }
+?>
