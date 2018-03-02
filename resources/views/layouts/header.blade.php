@@ -69,9 +69,9 @@ session()->forget('validited');}
 						</style>
 				</div>
 					@else
-				<div class="log">
+				<!-- <div class="log">
 					<div class="login" >
-						<div id="loginContainer"><a href="#" id="loginButton"><span>Войти</span></a>
+						<div id="loginContainer"><a href="{{route('register')}}" id="">Login</a>
 						    <div id="loginBox"> 
 				
 						        <form id="loginForm" method = "POST" action = "{{route('login')}}">
@@ -93,9 +93,12 @@ session()->forget('validited');}
 							</div>
 						</div>
 					</div>
+				</div> -->
+				<div class="reg">
+					<a href="{{ route('logining')}}">Login</a>
 				</div>
 				<div class="reg">
-					<a href="{{ route('register')}}">Зарегистрироваться</a>
+					<a href="{{ route('register')}}">Registrate</a>
 				</div>
 				<style>
 				.reg , .log

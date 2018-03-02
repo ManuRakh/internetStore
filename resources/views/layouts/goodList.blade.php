@@ -14,6 +14,7 @@
 				<div class="special-info grid_1 simpleCart_shelfItem">
 					<h5 id = "nameOfGood">{{$date->name}}</h5>
 					<div class="item_add"><span class="item_price"><h6>Just for {{$date->price}} {{$date->price_course}}</h6></span></div>
+					<div class="item_add"><span class="item_price"><a href="{{route('viewDetails',['goodid'=>$date->id])}}">More Details</a></span></div>
 					<div class="item_add"><span class="item_price"><a href="{{route('AddToBasket')}}?id={{$date->id}}&name={{$date->name}}&price={{$date->price}}{{$date->price_course}}">add to cart</a></span></div>
 				</div>
 	
@@ -23,14 +24,11 @@
 
 		
 @endforeach
+ </ul>
 
-			 		</ul>
-
-		 </div>
-		 {{ $data->links() }}
-
-		
-	 </div>
+</div>
+{{ $data->links() }}
+ </div>
 	 </div>
 <?php 
 // if(isset($_GET['id'])) {

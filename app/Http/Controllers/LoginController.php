@@ -81,5 +81,9 @@ class LoginController extends Controller
           
       }
     }
+    public function logining()
+    {
+        return  view('logining');
+    }
     
 }

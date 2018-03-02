@@ -9,16 +9,17 @@
                       <div class ="nahoy"> 
 					<div class="grid images_3_of_2">
 						<ul id="etalage">
-							<li>
+							<li> 
 								<a href="optionallink.html">
 									<img class="etalage_thumb_image" src="{{$firstdetail->url}}" class="img-responsive" />
 									<img class="etalage_source_image" src="{{$firstdetail->url}}" class="img-responsive" title="" />
 								</a>
+								
 							</li>
 						
-							@foreach($details as $detail)
+							@foreach($details as $detail) 
 							@if($detail->url!=$firstdetail->url)
-							<li>
+							<li> 
 								<img class="etalage_thumb_image" src="{{$detail->url}}" class="img-responsive" />
 								<img class="etalage_source_image" src="{{$detail->url}}" class="img-responsive" title="" />
 							</li>
@@ -32,17 +33,27 @@
                   <style>.etalage_small_thumbs{width:10%;height:60px;}</style>
 				  <div class="desc1 span_3_of_2">
 					<h3>soluta nobis eleifend option</h3>
-					<span class="brand">Brand: <a href="#">Sed do eiusmod </a></span>
+					@foreach($details as $detail)
+					<span class="brand">Brand: <a href="#">	{{$detail->brand}} </a></span> 
+					
 					<br>
-					<span class="code">Product Code: Product 11</span>
-					<p>when an unknown printer took a galley of type and scrambled it to make</p>
+					@if($detail->exist!=0)
+					<span class="code">Amount available {{$detail->exist}}</span>
+					@endif
+					@if ($detail->exist==0)
+					<span class="code">Availability is finished</span>
+
+					@endif
+				
+
 						<div class="price">
 							<span class="text">Price:</span>
-							<span class="price-new">$110.00</span><span class="price-old">$100.00</span> 
-							<span class="price-tax">Ex Tax: $90.00</span><br>
-							<span class="points"><small>Price in reward points: 400</small></span><br>
+							<span class="price-new">{{$detail->price}}{{$detail->price_course}}</span><span class="price-old"></span> 
+							<span class="price-tax">Tax: {{$detail->tax}}%</span><br>
+							<span class="points"><small>Price in reward points: <?php $danniye =  ($detail->tax/100*$detail->price)+$detail->price; echo $danniye;?></small></span><br>
 						</div>
-					<div class="det_nav1">
+							
+					<!-- <div class="det_nav1">
 						<h4>Select a size :</h4>
 							<div class=" sky-form col col-4">
 								<ul>
@@ -52,19 +63,21 @@
 									<li><label class="checkbox"><input type="checkbox" name="checkbox"><i></i>XL</label></li>
 								</ul>
 							</div>
-					</div>
+					</div> -->
 					<div class="btn_form">
-						<a href="checkout.html">buy</a>
+						<a href="{{route('AddToBasket')}}?id={{$detail->id}}&name={{$detail->name}}&price={{$detail->price}}{{$detail->price_course}}">buy</a>
 					</div>
-					<a href="#"><span>login to save in wishlist </span></a>
+					<a href="{{route('register')}}"><span>login to save in wishlist </span></a>
 					
 			   	 </div>
           	    <div class="clearfix"></div>
           	   </div>
           	    <div class="single-bottom1">
 					<h6>Details</h6>
-					<p class="prod-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option</p>
+					<p class="prod-desc">{{$detail->description}}</p>
 				</div>
+				@break;
+					@endforeach
 				<div class="single-bottom2">
 					<h6>Related Products</h6>
 						<div class="product">
