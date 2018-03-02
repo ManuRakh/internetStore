@@ -31,3 +31,7 @@ Route::get('/viewGoods/{category}/undercategories/{good}/{name}',"StoresControll
 Route::get('/details/{goodid}',"DetailsController@show")->name('viewDetails');
 Route::get('/addToBasket','BasketController@addIt')->name('AddToBasket');
 Route::get('/forget','BasketController@forget')->name('forget');
+Route::get('/panel/admin','PanelController@enter')->name('panelAdmin');
+Route::post('/panel/admin/enterGood','PanelController@enterGood')->name('enterGood');
+Route::post('/panel/admin/login','PanelController@login')->name('loginAdmin');
+Route::get('panel/logout','PanelController@logout')->name('logoutAdmin');
