@@ -67,7 +67,7 @@
 					<div class="btn_form">
 						<a href="{{route('AddToBasket')}}?id={{$detail->id}}&name={{$detail->name}}&price={{$detail->price}}{{$detail->price_course}}">buy</a>
 					</div>
-					<a href="{{route('register')}}"><span>login to save in wishlist </span></a>
+					<a href="{{route('logining')}}"><span>login to save in wishlist </span></a>
 					
 			   	 </div>
           	    <div class="clearfix"></div>
