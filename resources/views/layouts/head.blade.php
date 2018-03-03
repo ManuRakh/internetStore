@@ -65,7 +65,7 @@ use App\Undercategory;
 									 ?>
 								<li><a href="{{route('viewCategory',[
 									'category'=>$category_id
-									])}}">Смотреть все</a></li>
+									])}}">See all </a></li>
 <?php }  ?>
 
 </head>
@@ -76,7 +76,7 @@ use App\Undercategory;
 			<div class="top_right">
 				<ul>
 					<li><a href="#">help</a></li>|
-					<li><a href="contact.html">Contact</a></li>|
+					<li><a href="#">Contact</a></li>|
 					<li><a href="#">Delivery information</a></li>
 				</ul>
 			</div>

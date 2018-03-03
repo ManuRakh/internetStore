@@ -14,17 +14,19 @@
 			<div class="col-md-8 arriv-left1">
 				<img src="{{asset('public/images/3.jpg')}}" class="img-responsive" alt="">
 				<div class="arriv-info1">
-					<h3>Свитер</h3>
-					<p>Пополните свой гардероб шикарными свитерами</p>
+					<h3>SWEATER</h3>
+					<p>REVIVE YOUR WARDROBE WITH CHIC KNITS
+
+</p>
 					<div class="crt-btn">
-						<a href="details.html">Купить сейчас</a>
+						<a href="#">BUY NOW</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 arriv-right1">
 				<img src="{{asset('public/images/4.jpg')}}" class="img-responsive" alt="">
 				<div class="arriv-info2">
-					<a href="details.html"><h3>Спортивная обувь<i class="ars"></i></h3></a>
+					<a href="#"><h3>SPORT SHOES<i class="ars"></i></h3></a>
 				</div>
 			</div>
 			<div class="clearfix"> </div>
@@ -33,22 +35,22 @@
 			<div class="col-md-4 arriv-left2">
 				<img src="{{asset('public/images/5.jpg')}}" class="img-responsive" alt="">
 				<div class="arriv-info2">
-					<a href="details.html"><h3>Повседневные очки<i class="ars"></i></h3></a>
+					<a href="#"><h3>CASUAL GLASSES<i class="ars"></i></h3></a>
 				</div>
 			</div>
 			<div class="col-md-4 arriv-middle">
 				<img src="{{asset('public/images/6.jpg')}}" class="img-responsive" alt="">
 				<div class="arriv-info3">
-					<h3>Свежие футболки</h3>
+					<h3>NEW T-SHEARTS</h3>
 					<div class="crt-btn">
-						<a href="details.html">Купить сейчас</a>
+						<a href="#">BUY NOW</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 arriv-right2">
 				<img src="{{asset('public/images/7.jpg')}}" class="img-responsive" alt="">
 				<div class="arriv-info2">
-					<a href="details.html"><h3>Элегантные часы<i class="ars"></i></h3></a>
+					<a href="#"><h3>Elegant WATCHES<i class="ars"></i></h3></a>
 				</div>
 			</div>
 			<div class="clearfix"> </div>
@@ -57,15 +59,15 @@
 </div>
 <div class="special">
 	<div class="container">
-		<h3>Специальные предложения</h3>
+		<h3>Special Offers</h3>
 		<div class="specia-top">
 			<ul class="grid_2">
 		<li>
-				<a href="details.html"><img src="{{asset('public/images/8.jpg')}}" class="img-responsive" alt=""></a>
+				<a href="#"><img src="{{asset('public/images/8.jpg')}}" class="img-responsive" alt=""></a>
 				<div class="special-info grid_1 simpleCart_shelfItem">
-					<h5>Элегантное описание</h5>
-					<div class="item_add"><span class="item_price"><h6>Всего за $40.00</h6></span></div>
-					<div class="item_add"><span class="item_price"><a href="#">Добавить в корзину</a></span></div>
+					<h5>Elegant Describing</h5>
+					<div class="item_add"><span class="item_price"><h6>JUST FOR $40.00</h6></span></div>
+					<div class="item_add"><span class="item_price"><a href="#">Add to Bag</a></span></div>
 				</div>
 		</li>
 		

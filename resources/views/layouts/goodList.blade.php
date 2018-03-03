@@ -2,7 +2,7 @@
 	<div class="check">	 
  
 <div class="col-md-9 cart-items">
-             <h1>Все товары категории {{$category}}</h1>
+             <h1>All goods of category {{$category}}</h1>
              		<ul class="grid_2">
 
 @foreach($data as $date)

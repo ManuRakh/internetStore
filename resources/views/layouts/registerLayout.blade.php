@@ -127,11 +127,13 @@ session()->forget('data');
 {{$error}}
 @endforeach
 @endif
-	<div class="registration_left">
+	<!-- <div class="registration_left">
 		<h2>existing user</h2>
 		 <div class="registration_form">
 		 <!-- Form -->
-			<form id="registration_form" action="{{route('userAdd')}}" method="post">
+			<!-- <form id="registration_form" action="{{route('userAdd')}}" method="post">
+				{{csrf_field()}}
+				
 				<div>
 					<label>
 						<input placeholder="email:" type="email" tabindex="3" required>
@@ -148,10 +150,10 @@ session()->forget('data');
 				<div class="forget">
 					<a href="#">forgot your password</a>
 				</div>
-			</form>
+			</form> -->
 			<!-- /Form -->
-			</div>
-	</div>
+			<!-- </div>
+	</div> --> 
 	<div class="clearfix"></div>
 	</div>
 	<!-- end registration -->

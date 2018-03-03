@@ -2,7 +2,7 @@
 	<div class="check">	 
  
 <div class="col-md-9 cart-items">
-             <h1>Все подкатегории категории {{$category}} </h1>
+             <h1>All undercategories  of category {{$category}} </h1>
              
 @foreach($categoryz as $categor)
 

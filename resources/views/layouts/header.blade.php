@@ -23,13 +23,13 @@ session()->forget('successActivation');
 if(session()->has('validited'))
 {
 	if(session('validited')=='Not'){
-echo "<h4 class = 'error' id = 'succession'>Извините, аккаунт не активирован.<br/> Пожалуйста проверьте почту для активации аккаунта"."</h4>";
+echo "<h4 class = 'error' id = 'succession'>Sorry, your account isn't activated.<br/> Please check your email for activation"."</h4>";
 session()->forget('validited');}
 }
 if(session()->has('validited'))
 {
 		if(session('validited')=='Wrong'){
-echo "<h4 class = 'error' id = 'succession'>Извините, логин или пароль не верны.<br/>"."</h4>";
+echo "<h4 class = 'error' id = 'succession'>Ssory, login or password is wrong.<br/>"."</h4>";
 session()->forget('validited');}
 }
 ?>               
@@ -60,7 +60,7 @@ session()->forget('validited');}
 				<div class="reg">							
 					<?php echo session('UserName')?>
 <br/>
-					<a href="{{ route('logout')}}">Выйти</a>
+					<a href="{{ route('logout')}}">Logout</a>
 					<style>
 						.reg
 						{
@@ -98,7 +98,7 @@ session()->forget('validited');}
 					<a href="{{ route('logining')}}">Login</a>
 				</div>
 				<div class="reg">
-					<a href="{{ route('register')}}">Registrate</a>
+					<a href="{{ route('register')}}">Registration</a>
 				</div>
 				<style>
 				.reg , .log
@@ -135,13 +135,13 @@ session()->forget('validited');}
 	</div>
 		<!-- start header menu -->
 		<ul class="megamenu skyblue">
-			<li class="active grid"><a class="color1" href="{{route('home')}}">Домой</a></li>
-			<li class="grid"><a class="color2" href="#">Новые товары</a>
+			<li class="active grid"><a class="color1" href="{{route('home')}}">Home</a></li>
+			<li class="grid"><a class="color2" href="#">New coming</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Одежда</h4>
+								<h4>Closes</h4>
 								<ul>
 								<?php  giveGoods(5); ?>
 								
@@ -150,7 +150,7 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Детям</h4>
+								<h4>Kids</h4>
 								<ul>
 								<?php  giveGoods(4); ?>
 							
@@ -159,7 +159,7 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Сумки и Багажи</h4>
+								<h4>Bags</h4>
 								<ul>
 								<?php  giveGoods(3); ?>
 								
@@ -168,19 +168,18 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Аккаунт</h4>
+								<h4>Account(Not fully work now)</h4>
 								<ul>
-									<li><a href="#">Войти</a></li>
-									<li><a href="register.html">Создать аккаунт</a></li>
-									<li><a href="women.html">Создать список пожеланий</a></li>
-									<li><a href="women.html">Корзина</a></li>
-									<li><a href="women.html">Бренды</a></li>
+									<li><a href="{{ route('logining')}}">Login</a></li>
+									<li><a href="{{ route('register')}}">Create An Account</a></li>
+									<li><a href="#">My Shopping Bag</a></li>
+									<li><a href="#">Brands</a></li>
 								</ul>	
 							</div>						
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Аксессуары</h4>
+								<h4>ACCESSORIES</h4>
 								<ul>
 
 								
@@ -194,7 +193,7 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Обувь</h4>
+								<h4>FOOTWEAR</h4>
 								<ul>
 								<?php giveGoods(2);
 								//Good::giveGoods();
@@ -213,21 +212,21 @@ session()->forget('validited');}
     				</div>
 				</li>
 				
-				<li><a class="color5" href="#">Свитеры</a>
+				<li><a class="color5" href="#">SWEATER</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Новые свитера</h4>
+								<h4>New Sweaters</h4>
 								<ul>
-									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="#">New Arrivals</a></li>
 								
 								</ul>	
 							</div>							
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Детские свитера</h4>
+								<h4>Kids Sweaters</h4>
 								<ul>
 								<?php  giveGoods(4); ?>
 									
@@ -236,7 +235,7 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Зимние свитера</h4>
+								<h4>Winter Sweaters</h4>
 								<ul>
 
 <?php  giveGoods(3); ?>
@@ -245,27 +244,27 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Весенние свитера</h4>
+								<h4>Spring Sweaters</h4>
 								<ul>
-									<li><a href="#">Войти</a></li>
+									<li><a href="{{route('logining')}}">Login</a></li>
 								
 								</ul>	
 							</div>						
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Осенние свитера</h4>
+								<h4>Osenniye Sweaters</h4>
 								<ul>
-									<li><a href="women.html">Ремни</a></li>
+									<li><a href="#">Belts</a></li>
 								
 								</ul>	
 							</div>
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Корзина</h4>
+								<h4>My Shopping Bag</h4>
 								<ul>
-									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="#">New Arrivals</a></li>
 								
 								</ul>	
 							</div>
@@ -277,59 +276,59 @@ session()->forget('validited');}
 					</div>
     				</div>
 				</li>
-				<li><a class="color6" href="#">Обувь</a>
+				<li><a class="color6" href="#">FOOTWEAR</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Летняя обувь</h4>
+								<h4>Summer FOOTWEAR</h4>
 								<ul>
-									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="#">New Arrivals</a></li>
 									
 								</ul>	
 							</div>							
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Зимняя обувь</h4>
+								<h4>WINTER FOOTWEAR</h4>
 								<ul>
-									<li><a href="women.html">Майки</a></li>
+									<li><a href="#">See</a></li>
 					
 								</ul>	
 							</div>							
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Спортивная обувь</h4>
+								<h4>Sport FOOTWEAR</h4>
 								<ul>
-									<li><a href="women.html">Сумки и багажи</a></li>
+									<li><a href="#">See</a></li>
 								
 								</ul>	
 							</div>												
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Оффициальный стиль</h4>
+								<h4>Offitial FOOTWEAR</h4>
 								<ul>
-									<li><a href="#">Войти</a></li>
+									<li><a href="{{route('logining')}}">Login</a></li>
 									
 								</ul>	
 							</div>						
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Аксессуары</h4>
+								<h4>ACCESSORIES</h4>
 								<ul>
-									<li><a href="women.html">ремни</a></li>
+									<li><a href="#">See</a></li>
 									
 								</ul>	
 							</div>
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Обувь</h4>
+								<h4>FOOTWEAR</h4>
 								<ul>
-									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="#">New Arrivals</a></li>
 								
 								</ul>	
 							</div>
@@ -345,32 +344,32 @@ session()->forget('validited');}
     				</div>
 				</li>				
 			
-				<li><a class="color7" href="#">Очки</a>
+				<li><a class="color7" href="#">Glasses</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Одежда</h4>
+								<h4>Some Glasses</h4>
 								<ul>
-									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="#">New Arrivals</a></li>
 									
 								</ul>	
 							</div>							
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Детям</h4>
+								<h4>Kids</h4>
 								<ul>
-									<li><a href="women.html">Pools&Tees</a></li>
+									<li><a href="#">Pools&Tees</a></li>
 								
 								</ul>	
 							</div>							
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Сумки</h4>
+								<h4>See</h4>
 								<ul>
-									<li><a href="women.html">Сумки и багажи</a></li>
+									<li><a href="#">See</a></li>
 									
 								</ul>	
 							</div>												
@@ -379,25 +378,25 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>аккаунт</h4>
 								<ul>
-									<li><a href="#">Войти</a></li>
+									<li><a href="{{route('logining')}}">Login</a></li>
 								
 								</ul>	
 							</div>						
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Аксессуары</h4>
+								<h4>See</h4>
 								<ul>
-									<li><a href="women.html">ремни</a></li>
+									<li><a href="#">See</a></li>
 								
 								</ul>	
 							</div>
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Обувь</h4>
+								<h4>See</h4>
 								<ul>
-									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="#">See</a></li>
 						
 								</ul>	
 							</div>
@@ -413,14 +412,14 @@ session()->forget('validited');}
     				</div>
 				</li>				
 			
-				<li><a class="color8" href="#">Футболки</a>
+				<li><a class="color8" href="#">T-SHIRTS</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Одежда</h4>
+								<h4>Closes</h4>
 								<ul>
-									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="#">New Arrivals</a></li>
 								
 								</ul>	
 							</div>							
@@ -429,43 +428,43 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Детям</h4>
 								<ul>
-									<li><a href="women.html">Тренды</a></li>
+									<li><a href="#">TRENDS</a></li>
 									
 								</ul>	
 							</div>							
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Сумки</h4>
+								<h4>See</h4>
 								<ul>
-									<li><a href="women.html">Тренды</a></li>
+									<li><a href="#">See</a></li>
 									
 								</ul>	
 							</div>												
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Аккаунт</h4>
+								<h4>Account</h4>
 								<ul>
-									<li><a href="#">Войти</a></li>
+									<li><a href="{{route('logining')}}">Login</a></li>
 								
 								</ul>	
 							</div>						
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Аксессуары</h4>
+								<h4>See</h4>
 								<ul>
-									<li><a href="women.html">Тренды</a></li>
+									<li><a href="#">See</a></li>
 									
 								</ul>	
 							</div>
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Обувь</h4>
+								<h4>FOOTWEAR</h4>
 								<ul>
-									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="#">New Arrivals</a></li>
 									
 								</ul>	
 							</div>
@@ -480,50 +479,50 @@ session()->forget('validited');}
 					</div>
     				</div>
 				</li>
-				<li><a class="color9" href="#">Часы</a>
+				<li><a class="color9" href="#">WATCHES</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Одежда</h4>
+								<h4>WATCHES</h4>
 								<ul>
-									<li><a href="women.html">Новые товары</a></li>
+									<li><a href="#">New Arrivals</a></li>
 									
 								</ul>	
 							</div>							
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Детям</h4>
+								<h4>Kids</h4>
 								<ul>
-									<li><a href="women.html">Тренды</a></li>
+									<li><a href="#">TRENDS</a></li>
 							
 								</ul>	
 							</div>							
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Сумки</h4>
+								<h4>See</h4>
 								<ul>
-									<li><a href="women.html">Тренды</a></li>
+									<li><a href="#">See</a></li>
 								
 								</ul>	
 							</div>												
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Аккаунт</h4>
+								<h4>Account</h4>
 								<ul>
-									<li><a href="#">Войти</a></li>
+									<li><a href="{{route('logining')}}">Login</a></li>
 							
 								</ul>	
 							</div>						
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Аксессуары</h4>
+								<h4>See</h4>
 								<ul>
-									<li><a href="women.html">Тренды</a></li>
+									<li><a href="#">See</a></li>
 									
 								</ul>	
 							</div>
@@ -539,12 +538,12 @@ session()->forget('validited');}
 					</div>
     				</div>
 				</li>
-				<li><a class="color9" href="#">Корзина</a>
+				<li><a class="color9" href="#">My Shopping Bag</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Товары в корзине</h4>
+								<h4>My Shopping Bag</h4>
 								<ul>
 								<?php 
 									
@@ -552,7 +551,7 @@ session()->forget('validited');}
 										{
 											if(session()->has('id'.$i)) 
 											
-											echo '<li><a href="women.html">'.session('name'.$i).session('id'.$i).'</a></li>';
+											echo '<li><a href="#">'.session('name'.$i).session('id'.$i).'</a></li>';
 										}
 								?>
 
@@ -562,13 +561,13 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Цены</h4>
+								<h4>Price</h4>
 								<ul>
 								<?php	for($i = 0 ; $i<500;$i++)
 										{
 											if(session()->has('id'.$i)) 
 											
-											echo '<li><a href="women.html">'.session('price'.$i).'</a></li>';
+											echo '<li><a href="#">'.session('price'.$i).'</a></li>';
 										}?>
 
 								</ul>	
@@ -577,12 +576,12 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Переход к корзине</h4>
+								<h4>Go to Basket</h4>
 								<ul>
-									<li><a href="women.html">Перейти в корзину</a></li>
-									<li><a href="women.html">Приступить к заказу</a></li>
+									<li><a href="#">Go to Basket</a></li>
+									<li><a href="#">Checkout</a></li>
 									 <li>
-									<a href ="{{route('forget')}}" onClick="">Очистить коризу</a>
+									<a href ="{{route('forget')}}" onClick="">Clean Shopping Bag</a>
 									</li>
 
 								</ul>	
