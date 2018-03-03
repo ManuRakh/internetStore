@@ -12,13 +12,20 @@ class BasketController extends Controller
             $id =  ($_GET['id']);
             $name =  ($_GET['name']);
             $price = ($_GET['price']);
+            $imgurl = ($_GET['imgurl']);
+            $brand = ($_GET['brand']);
+            $tax = ($_GET['tax']);
+
             session(['id'.$id => $id]);
             session(['name'.$id => $name,
             'price'.$id =>$price,
+            'imgurl'.$id =>$imgurl,
+            'brand'.$id=>$brand,
+            'tax'.$id=>$tax,
+
             ]);
-       //dump(session());
         }
-     return  redirect()->back();
+    return  redirect()->back();
     }
     public function forget()
     {
@@ -28,9 +35,16 @@ class BasketController extends Controller
             session()->forget('id'.$i);
             session()->forget('name'.$i);
             session()->forget('price'.$i);
-       
+            session()->forget('imgurl'.$i);
+            session()->forget('brand'.$i);
+            session()->forget('tax'.$i);
+
        
         }	
         return redirect()->back();
+    }
+    public function checkout()
+    {
+        return view('checkout');
     }
 }
