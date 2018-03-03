@@ -51,7 +51,14 @@ session()->forget('validited');}
 
 <!-- start header_right -->
 		<div class="header_right">					
-
+		<!-- <div class="cart box_1" style = "position:fixed;left:0;">
+				<a href="">
+					<h3> <span class="">$0.00</span> 
+					<span id="" class="">0</span> items
+					<img src="{{asset('public/images/bag.png')}}" alt=""></h3>
+				</a>	
+				<div class="clearfix"> </div>
+			</div> -->
 			<div class="rgt-bottom">
 			@if(session()->has('login'))
 
@@ -100,6 +107,9 @@ session()->forget('validited');}
 				<div class="reg">
 					<a href="{{ route('register')}}">Registration</a>
 				</div>
+				<div class="create_btn" >
+				<a href="{{route('checkout')}}">CHECKOUT</a>
+			</div>
 				<style>
 				.reg , .log
 				{
@@ -129,10 +139,13 @@ session()->forget('validited');}
 				<input type="submit" value="">
 			</form>
 		</div>
+		
 		<div class="clearfix"> </div>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
+
+		
 		<!-- start header menu -->
 		<ul class="megamenu skyblue">
 			<li class="active grid"><a class="color1" href="{{route('home')}}">Home</a></li>

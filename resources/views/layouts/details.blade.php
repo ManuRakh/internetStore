@@ -11,8 +11,8 @@
 						<ul id="etalage">
 							<li> 
 								<a href="optionallink.html">
-									<img class="etalage_thumb_image" src="{{$firstdetail->url}}" class="img-responsive" />
-									<img class="etalage_source_image" src="{{$firstdetail->url}}" class="img-responsive" title="" />
+									<img class="etalage_thumb_image" src="{{asset('public/images/'.$firstdetail->url)}}" class="img-responsive" />
+									<img class="etalage_source_image" src="{{asset('public/images/'.$firstdetail->url)}}" class="img-responsive" title="" />
 								</a>
 								
 							</li>
@@ -20,8 +20,8 @@
 							@foreach($details as $detail) 
 							@if($detail->url!=$firstdetail->url)
 							<li> 
-								<img class="etalage_thumb_image" src="{{$detail->url}}" class="img-responsive" />
-								<img class="etalage_source_image" src="{{$detail->url}}" class="img-responsive" title="" />
+								<img class="etalage_thumb_image" src="{{asset('public/images/'.$detail->url)}}" class="img-responsive" />
+								<img class="etalage_source_image" src="{{asset('public/images/'.$detail->url)}}" class="img-responsive" title="" />
 							</li>
 							@endif
 							@endforeach
@@ -65,7 +65,7 @@
 							</div>
 					</div> -->
 					<div class="btn_form">
-						<a href="{{route('AddToBasket')}}?id={{$detail->id}}&name={{$detail->name}}&price={{$detail->price}}{{$detail->price_course}}">buy</a>
+						<a href="{{route('AddToBasket')}}?id={{$detail->id}}&name={{$detail->name}}&price={{$detail->price}}{{$detail->price_course}}&imgurl={{$detail->imgurl}}&brand={{$detail->brand}}&tax={{$detail->tax}}">buy</a>
 					</div>
 					<a href="{{route('logining')}}"><span>login to save in wishlist </span></a>
 					

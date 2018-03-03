@@ -35,3 +35,4 @@ Route::get('/panel/admin','PanelController@enter')->name('panelAdmin');
 Route::post('/panel/admin/enterGood','PanelController@enterGood')->name('enterGood');
 Route::post('/panel/admin/login','PanelController@login')->name('loginAdmin');
 Route::get('panel/logout','PanelController@logout')->name('logoutAdmin');
+Route::get('/checkout','BasketController@checkout')->name('checkout');

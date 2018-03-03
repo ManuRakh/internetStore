@@ -59,7 +59,7 @@
 </div>
 <div class="special">
 	<div class="container">
-		<h3>Special Offers</h3>
+		<h3>My shopping bag</h3>
 		<div class="specia-top">
 			<ul class="grid_2">
 		<li>
@@ -77,6 +77,7 @@
 		</div>
 	</div>
 </div>
+
 <div class="foot-top">
 	<div class="container">
 		<div class="col-md-6 s-c">

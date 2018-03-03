@@ -69,6 +69,7 @@ use App\Undercategory;
 <?php }  ?>
 
 </head>
+
 <body>
 <div class="top_bg">
 	<div class="container">
