@@ -65,7 +65,7 @@
 							</div>
 					</div> -->
 					<div class="btn_form">
-						<a href="{{route('AddToBasket')}}?id={{$detail->id}}&name={{$detail->name}}&price={{$detail->price}}{{$detail->price_course}}&imgurl={{$detail->imgurl}}&brand={{$detail->brand}}&tax={{$detail->tax}}">buy</a>
+						<a href="{{route('AddToBasket')}}?id={{$detail->id}}&name={{$detail->name}}&price={{$detail->price}}{{$detail->price_course}}&imgurl={{$detail->imgurl}}&brand={{$detail->brand}}&tax={{$detail->tax}}&delivery={{$detail->deliveryprice}}">buy</a>
 					</div>
 					<a href="{{route('logining')}}"><span>login to save in wishlist </span></a>
 					

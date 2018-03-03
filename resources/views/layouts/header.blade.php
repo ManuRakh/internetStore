@@ -296,7 +296,7 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Summer FOOTWEAR</h4>
 								<ul>
-									<li><a href="#">New Arrivals</a></li>
+									<li><a href="#">See</a></li>
 									
 								</ul>	
 							</div>							
@@ -364,7 +364,7 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Some Glasses</h4>
 								<ul>
-									<li><a href="#">New Arrivals</a></li>
+									<li><a href="#">See</a></li>
 									
 								</ul>	
 							</div>							
@@ -373,8 +373,9 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Kids</h4>
 								<ul>
-									<li><a href="#">Pools&Tees</a></li>
-								
+									<!-- <li><a href="#">Pools&Tees</a></li> -->
+									<li><a href="#">See</a></li>
+
 								</ul>	
 							</div>							
 						</div>
@@ -432,7 +433,7 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Closes</h4>
 								<ul>
-									<li><a href="#">New Arrivals</a></li>
+									<li><a href="#">See</a></li>
 								
 								</ul>	
 							</div>							
@@ -499,7 +500,7 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>WATCHES</h4>
 								<ul>
-									<li><a href="#">New Arrivals</a></li>
+									<li><a href="#">See</a></li>
 									
 								</ul>	
 							</div>							
@@ -557,7 +558,7 @@ session()->forget('validited');}
 						<div class="col1">
 							<div class="h_nav">
 								<h4>My Shopping Bag</h4>
-								<ul>
+								<ul id = "shopBag">
 								<?php 
 									
 										for($i = 0 ; $i<500;$i++)
@@ -575,7 +576,7 @@ session()->forget('validited');}
 						<div class="col1">
 							<div class="h_nav">
 								<h4>Price</h4>
-								<ul>
+								<ul id = "priceBag">
 								<?php	for($i = 0 ; $i<500;$i++)
 										{
 											if(session()->has('id'.$i)) 
@@ -591,8 +592,7 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Go to Basket</h4>
 								<ul>
-									<li><a href="#">Go to Basket</a></li>
-									<li><a href="#">Checkout</a></li>
+									<li><a href="{{route('checkout')}}">Checkout</a></li>
 									 <li>
 									<a href ="{{route('forget')}}" onClick="">Clean Shopping Bag</a>
 									</li>
