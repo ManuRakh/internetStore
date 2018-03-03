@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<title>Gretong a Ecommerce Category Flat Bootstarp Responsive Website Template | Home :: w3layouts</title>
+<title>Alishverish . Best site for shoping in EveryWhere</title>
 <link href="{{asset('/public/css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary JavaScript plugins) -->
 <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
