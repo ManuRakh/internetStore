@@ -22,7 +22,7 @@ for($i = 0 ; $i<500;$i++)
 				 <span>Total</span>
 				 <span class="total1">{{$summ}}.00$</span>
 				 <span>Discount</span>
-				 <span class="total1">---</span>
+				 <span class="total1">0%</span>
 				 <span>Delivery Charges</span>
 				 <span class="total1">{{$del}}$</span>
 				 <div class="clearfix"></div>				 

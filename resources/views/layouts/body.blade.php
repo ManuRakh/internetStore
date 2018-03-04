@@ -57,26 +57,38 @@
 		</div>
 	</div>
 </div>
-<div class="special">
-	<div class="container">
-		<h3>My shopping bag</h3>
-		<div class="specia-top">
+<div class="special"><h3>My shopping bag</h3></div>
+<div class="container">
+	<div class="specia-top">	 
+ 
+<div class="col-md-9 cart-items">
+
 			<ul class="grid_2">
-		<li>
-				<a href="#"><img src="{{asset('public/images/8.jpg')}}" class="img-responsive" alt=""></a>
-				<div class="special-info grid_1 simpleCart_shelfItem">
-					<h5>Elegant Describing</h5>
-					<div class="item_add"><span class="item_price"><h6>JUST FOR $40.00</h6></span></div>
-					<div class="item_add"><span class="item_price"><a href="#">Add to Bag</a></span></div>
-				</div>
-		</li>
-		
-		
-		<div class="clearfix"> </div>
-	</ul>
+	<?php 
+									
+		for($i = 0 ; $i<500;$i++)
+		{
+			if(session()->has('id'.$i)) 
+			{
+	?>
+				<li>
+
+					<a href="#"><img src="{{asset('public/images/'.session('imgurl'.$i).'.jpg')}}" class="img-responsive" alt="" style = "width:300px;height:200px;"></a>
+					<div class="special-info grid_1 simpleCart_shelfItem">
+					<h5 id = "nameOfGood">{{session('name'.$i)}}</h5>
+					<div class="item_add"><span class="item_price"><h6>Just for {{session('price'.$i)}} </h6></span></div>
+					<div class="item_add"><span class="item_price"><a href="{{route('viewDetails',['goodid'=>session('id'.$i)])}}">More Details</a></span></div>
+				    </div>
+	
+				</li>
+<?php
+			}
+		}
+?>
 		</div>
 	</div>
 </div>
+
 
 <div class="foot-top">
 	<div class="container">
