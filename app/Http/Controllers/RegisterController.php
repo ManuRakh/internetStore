@@ -6,7 +6,6 @@ use App\User;
 use App\Http\Controllers\Session;
 
 use Mailgun\Mailgun;
-require '..\vendor\autoload.php';
 class RegisterController extends Controller
 {
     public function index()
@@ -50,7 +49,7 @@ class RegisterController extends Controller
         'from'    => ' <postmaster@store.mg.org>',
         'to'      => $input->email,
      'subject' => "Activate your account   ".date('Y:m:d h:i:s A'),
-     'html' => "<a href = 'store/activation/".$input->password.md5( $input->email)."/".$input->email."'>".$input->password.md5( $input->email)."</a>", 
+     'html' => "Activation link <a href = 'store/activation/".$input->password.md5( $input->email)."/".$input->email."'>".$input->password.md5( $input->email)."</a>", 
      )); 
 return redirect()->back();
     

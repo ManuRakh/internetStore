@@ -36,3 +36,5 @@ Route::post('/panel/admin/enterGood','PanelController@enterGood')->name('enterGo
 Route::post('/panel/admin/login','PanelController@login')->name('loginAdmin');
 Route::get('panel/logout','PanelController@logout')->name('logoutAdmin');
 Route::get('/checkout','BasketController@checkout')->name('checkout');
+Route::get('/checkout/placeorder','OrderController@placeOrder')->name('placeOrder');
+Route::post('/checkout/placeorder/finishOrder','OrderController@finishOrder')->name('finishOrder');

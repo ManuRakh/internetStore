@@ -271,7 +271,7 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Osenniye Sweaters</h4>
 								<ul>
-									<li><a href="#">Belts</a></li>
+									<li><a href="#">See</a></li>
 								
 								</ul>	
 							</div>
@@ -280,7 +280,7 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>My Shopping Bag</h4>
 								<ul>
-									<li><a href="#">New Arrivals</a></li>
+									<li><a href="{{route('checkout')}}">Go to bag</a></li>
 								
 								</ul>	
 							</div>
@@ -292,6 +292,7 @@ session()->forget('validited');}
 					</div>
     				</div>
 				</li>
+<!-- 				
 				<li><a class="color6" href="#">FOOTWEAR</a>
 				<div class="megapanel">
 					<div class="row">
@@ -376,7 +377,6 @@ session()->forget('validited');}
 							<div class="h_nav">
 								<h4>Kids</h4>
 								<ul>
-									<!-- <li><a href="#">Pools&Tees</a></li> -->
 									<li><a href="#">See</a></li>
 
 								</ul>	
@@ -554,7 +554,7 @@ session()->forget('validited');}
 						<div class="col1"></div>
 					</div>
     				</div>
-				</li>
+				</li> -->
 				<li><a class="color9" href="#">My Shopping Bag</a>
 				<div class="megapanel">
 					<div class="row">

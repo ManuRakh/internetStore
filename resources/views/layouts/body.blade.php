@@ -14,19 +14,19 @@
 			<div class="col-md-8 arriv-left1">
 				<img src="{{asset('public/images/3.jpg')}}" class="img-responsive" alt="">
 				<div class="arriv-info1">
-					<h3>SWEATER</h3>
+					<h3>SWEATERS</h3>
 					<p>REVIVE YOUR WARDROBE WITH CHIC KNITS
 
 </p>
 					<div class="crt-btn">
-						<a href="#">BUY NOW</a>
+						<a href="http://store/viewGoods/4/undercategories/20/Sweaters">BUY NOW</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 arriv-right1">
 				<img src="{{asset('public/images/4.jpg')}}" class="img-responsive" alt="">
 				<div class="arriv-info2">
-					<a href="#"><h3>SPORT SHOES<i class="ars"></i></h3></a>
+					<a href="http://store/viewGoods/2/undercategories/12/Sport%20Shoes"><h3>SPORT SHOES<i class="ars"></i></h3></a>
 				</div>
 			</div>
 			<div class="clearfix"> </div>
@@ -35,22 +35,22 @@
 			<div class="col-md-4 arriv-left2">
 				<img src="{{asset('public/images/5.jpg')}}" class="img-responsive" alt="">
 				<div class="arriv-info2">
-					<a href="#"><h3>CASUAL GLASSES<i class="ars"></i></h3></a>
+					<a href="http://store/viewGoods/Casual%20Glasses/undercategories/25/Casual%20Glasses"><h3>CASUAL GLASSES<i class="ars"></i></h3></a>
 				</div>
 			</div>
 			<div class="col-md-4 arriv-middle">
 				<img src="{{asset('public/images/6.jpg')}}" class="img-responsive" alt="">
 				<div class="arriv-info3">
-					<h3>NEW T-SHEARTS</h3>
+					<h3>T-SHIRTS</h3>
 					<div class="crt-btn">
-						<a href="#">BUY NOW</a>
+						<a href="http://store/viewGoods/5/undercategories/26/T-SHIRTS">BUY NOW</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 arriv-right2">
 				<img src="{{asset('public/images/7.jpg')}}" class="img-responsive" alt="">
 				<div class="arriv-info2">
-					<a href="#"><h3>Elegant WATCHES<i class="ars"></i></h3></a>
+					<a href="http://store/viewGoods/WATCHES/undercategories/27/WATCHES"><h3>Elegant WATCHES<i class="ars"></i></h3></a>
 				</div>
 			</div>
 			<div class="clearfix"> </div>
