@@ -75,6 +75,9 @@ session()->forget('validited');}
 						}
 						</style>
 				</div>
+				<div class="create_btn" >
+				<a href="{{route('checkout')}}">CHECKOUT</a>
+			</div>
 					@else
 				<!-- <div class="log">
 					<div class="login" >
@@ -564,8 +567,10 @@ session()->forget('validited');}
 										for($i = 0 ; $i<500;$i++)
 										{
 											if(session()->has('id'.$i)) 
-											
-											echo '<li><a href="#">'.session('name'.$i).session('id'.$i).'</a></li>';
+											{
+											?>
+											<li><a href="{{route('checkout')}}">{{session('name'.$i)}}</a></li>
+								<?php		}
 										}
 								?>
 
@@ -575,14 +580,16 @@ session()->forget('validited');}
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Price</h4>
+								<h4>Summary Price</h4>
 								<ul id = "priceBag">
-								<?php	for($i = 0 ; $i<500;$i++)
+								<?php $priceInAll=0;	for($i = 0 ; $i<500;$i++)
 										{
 											if(session()->has('id'.$i)) 
-											
-											echo '<li><a href="#">'.session('price'.$i).'</a></li>';
+											{$priceInAll+=(int)session('price'.$i);
+										}
 										}?>
+										<li><a href="{{route('checkout')}}">{{$priceInAll}}$</a></li>
+
 
 								</ul>	
 

@@ -1,6 +1,4 @@
 
-<a id = "selectit" href = "#" >ref</a>
-
 <script >
 function addingajax(id,name,price,imgurl,brand,tax,delivery)
 {
@@ -13,8 +11,20 @@ $.ajax({
   {
   },
   complete: function(data){
+	if($('#shopBag').html().match('<li><a href="#">'+name+'</a></li>')) 
+  {
+alert("succesfull added");
+return;
+}
+if($('#priceBag').html().match('<li><a href="#">'+price+'</a></li>')) 
+{
+	alert("succesfull added");
+
+	return;
+}
 	$('#shopBag').append('<li><a href="#">'+name+'</a></li>');
 	$('#priceBag').append('<li><a href="#">'+price+'</a></li>');
+	alert("succesfull added");
 
   }
 });
