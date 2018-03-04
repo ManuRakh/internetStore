@@ -4,7 +4,7 @@
 	<div class="header">
 	<div class="head-t">
 		<div class="logo">
-			<a href="{{route('home')}}"><img src="{{asset('public/images/logo.png')}}" class="img-responsive" alt=""/> </a>
+			<a href="{{route('home')}}"><img src="{{asset('public/images/logo.png')}}" class="img-responsive" alt="" style = "width:182px;height:55px;"/> </a>
 		</div>
 		@if(count($errors)>0)
 @foreach($errors->all() as $error)
