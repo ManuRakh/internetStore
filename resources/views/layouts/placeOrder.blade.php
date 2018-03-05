@@ -8,6 +8,13 @@ echo "<h4 id = 'succession'>".($value)."</h4>";
 session()->forget('data');
 
 }
+if(session()->has('errorfailed'))
+{
+	$value = session('errorfailed');
+echo "<h4 id = 'error'>".($value)."</h4>";
+session()->forget('errorfailed');
+
+}
 }
 ?>
 <style>
@@ -15,6 +22,11 @@ session()->forget('data');
 {
 	color:green;
 }
+#error
+{
+	color:red;
+}
+
 </style>
 
 <div class="container">
@@ -52,7 +64,7 @@ session()->forget('data');
 				</div>
                 <div>
 					<label>
-						<input placeholder="Any relevant information :" name = "address2" type="text" tabindex="3" required>
+						<input placeholder="Any relevant information :" name = "address2" type="text" tabindex="3" >
 					</label>
 				</div>
 				<div>

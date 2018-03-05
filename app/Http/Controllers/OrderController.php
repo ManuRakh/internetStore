@@ -40,9 +40,17 @@ class OrderController extends Controller
           $input->goodnames =$goodnames;
 
           $data =(array) $input;
-       /*   $order->fill($data);
-          $order->save();*/
-          return redirect('sparkpost');
+          if($goodids!=""||$goodids!=null)
+          {
+        $order->fill($data);
+          $order->save();
+          }
+          else
+          { session([
+              'errorfailed'=>'Ssory , your bag is empty. Please add at least 1 good before ordering.',
+              ]);
+               return  redirect()->back();
+            }
         // return redirect('home');
         //  require_once "SendMailSmtpClass.php"; // подключаем класс
  
@@ -63,10 +71,10 @@ class OrderController extends Controller
          
         //   953892af2c30a072430a4e2d60dd9e7c-us17
           //$html = file_get_contents('..\resources\views\email\contact-mail.blade.php');
-  /* $mgClient = new Mailgun('key-5362a59587a47047c93e3ed27ae3d9b1');
-    $domain = "store.mg.org";
+   $mgClient = new Mailgun('key-5362a59587a47047c93e3ed27ae3d9b1');
+    $domain = "alishverish.h1n.ru";
     $result = $mgClient->sendMessage("$domain", array(
-        'from'    => ' <postmaster@store.mg.org>',
+        'from'    => ' <postmaster@alishverish.h1n.ru>',
         'to'      => $input->email,
      'subject' => "Order delivery information    ".date('Y:m:d h:i:s A'),
      'html' => "Order delivery information <br/>
@@ -83,8 +91,12 @@ class OrderController extends Controller
      <br/>Our operators will contact with you as soon as it possible.
      <br/>Thanks for using our service.We glad to see you.
      ", 
-     )); */
+     )); 
     //  return redirect()->back();
+    session([
+        'data'=>'Your order is successfull added to delivering. Please check your email for more details',
+        ]);
+         return  redirect()->back();
     }
 
     public function placeOrder()
