@@ -40,12 +40,13 @@ class OrderController extends Controller
           $input->goodnames =$goodnames;
 
           $data =(array) $input;
-          $order->fill($data);
-          $order->save();
+       /*   $order->fill($data);
+          $order->save();*/
+          return redirect('sparkpost');
         // return redirect('home');
         //  require_once "SendMailSmtpClass.php"; // подключаем класс
  
-         $mailSMTP = new SendMailSmtpClass('manucher5160o@yandex.ru', 'otdyhaem123', 'ssl://smtp.yandex.ru', 'Evgeniy', 465);
+      /*   $mailSMTP = new SendMailSmtpClass('manucher5160o@yandex.ru', 'otdyhaem123', 'ssl://smtp.yandex.ru', 'Evgeniy', 465);
           // $mailSMTP = new SendMailSmtpClass('логин', 'пароль', 'хост', 'имя отправителя');
            
           // заголовок письма
@@ -58,10 +59,8 @@ class OrderController extends Controller
               echo "Success";
           }else{
               echo "!Success. Error: " . $result;
-          }
-          
-          
-        
+          }*/
+         
         //   953892af2c30a072430a4e2d60dd9e7c-us17
           //$html = file_get_contents('..\resources\views\email\contact-mail.blade.php');
   /* $mgClient = new Mailgun('key-5362a59587a47047c93e3ed27ae3d9b1');

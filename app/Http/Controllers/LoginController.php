@@ -46,7 +46,7 @@ class LoginController extends Controller
            else
            {
             session(['validited' => 'Wrong']);
-            return redirect('home');
+            return redirect('/');
        }
     }
     public function logout()

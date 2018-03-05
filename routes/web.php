@@ -38,3 +38,14 @@ Route::get('panel/logout','PanelController@logout')->name('logoutAdmin');
 Route::get('/checkout','BasketController@checkout')->name('checkout');
 Route::get('/checkout/placeorder','OrderController@placeOrder')->name('placeOrder');
 Route::post('/checkout/placeorder/finishOrder','OrderController@finishOrder')->name('finishOrder');
+Route::get('/sparkpost', function () {
+    if(mail("manucher5160@gmail.com","huy","From : manucher5160@gmail.com "))
+    {
+      echo 'good';
+    }
+    else
+    {
+      echo 'bad';
+    }
+  })->name('sparkhost');
+  
