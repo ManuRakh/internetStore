@@ -2,7 +2,7 @@
 <div class="footer">
 	<div class="container">
 		<div class="col-md-3 cust">
-			<!--<h4>CUSTOMER CARE</h4>-->
+			<h4>CUSTOMER CARE</h4>
 			<!--	<li><a href="#">Help Center</a></li>-->
 			<!--	<li><a href="#">FAQ</a></li>-->
 			<!--	<li><a href="#">How To Buy</a></li>-->
