@@ -10,10 +10,10 @@
 		</div>
 		<div class="col-md-2 abt">
 			<h4>ABOUT US</h4>
-				<li><a href="#">Our Stories</a></li>
+				<!-- <li><a href="#">Our Stories</a></li>
 				<li><a href="#">Press</a></li>
 				<li><a href="#">Career</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="#">Contact</a></li> -->
 		</div>
 		<div class="col-md-2 myac">
 			<h4>MY ACCOUNT</h4>
