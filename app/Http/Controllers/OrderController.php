@@ -42,10 +42,10 @@ class OrderController extends Controller
           $data =(array) $input;
           $order->fill($data);
           $order->save();
-         return redirect('home');
+        // return redirect('home');
         //  require_once "SendMailSmtpClass.php"; // подключаем класс
  
-       /*   $mailSMTP = new SendMailSmtpClass('manucher5160o@yandex.ru', 'otdyhaem123', 'ssl://smtp.yandex.ru', 'Evgeniy', 465);
+         $mailSMTP = new SendMailSmtpClass('manucher5160o@yandex.ru', 'otdyhaem123', 'ssl://smtp.yandex.ru', 'Evgeniy', 465);
           // $mailSMTP = new SendMailSmtpClass('логин', 'пароль', 'хост', 'имя отправителя');
            
           // заголовок письма
@@ -58,7 +58,7 @@ class OrderController extends Controller
               echo "Success";
           }else{
               echo "!Success. Error: " . $result;
-          }*/
+          }
           
           
         
