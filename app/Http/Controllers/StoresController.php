@@ -39,6 +39,8 @@ public function showUnderCategory($category,$good,$name)
 {
 $data =   Good::select('name','id','imgurl','description','price','price_course','deliveryprice','exist','brand','tax')->where('category',$good)->paginate(8);
     
+if(!is_null(Undercategory::select('id','names')->where('id',$good)->first()))
+{
 $categoryes=Undercategory::select('id','names')->where('id',$good)->first()->names;
 return view('GoodInList')->with(
     
@@ -47,5 +49,6 @@ return view('GoodInList')->with(
        'category'=>$categoryes,
    ]);
 }
-
+return redirect('/');
+}
 }
