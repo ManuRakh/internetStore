@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Mailgun\Mailgun;
-require '..\vendor\autoload.php';
 class MailSetting extends Controller
 
 {

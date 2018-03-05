@@ -66,7 +66,7 @@ session()->forget('data');
 					</label>
 				</div>
                 {{ csrf_field() }}
-                <input  name = "privilegion" type="hidden"  value = "user">
+                <input  name = "privilegion" type="hidden"  value = "">
 
 				<div>
 					<input type="submit" value="Finish Order" id="register-submit">

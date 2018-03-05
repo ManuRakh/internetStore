@@ -12,6 +12,7 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
         "mailgun/mailgun-php": "^2.4",
+        "mandrill/mandrill": "^1.0",
         "php-http/guzzle6-adapter": "^1.1",
         "php-http/message": "^1.6"
     },
@@ -63,4 +64,8 @@
         "sort-packages": true,
         "optimize-autoloader": true
     }
+    
+      
+    
+    
 }
